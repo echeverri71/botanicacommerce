@@ -11,6 +11,12 @@
 
 .material-symbols-outlined{
   font-size: 2em;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+
 }
 
 .tt1{
