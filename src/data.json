@@ -1,0 +1,50 @@
+[
+    {"id": 1, 
+    "name": "Agapanto",
+    "price": 3500,
+    "description": "Es una planta con flor muy vistosa y resistente.", 
+    "stock": 4,
+    "category": "Plantas de Interior"
+    },
+
+    {"id": 2, 
+    "name": "Palo de Agua",
+    "price": 4500,
+    "description": "Se característica por los distintos tonos de verde de sus hojas, con forma lanceoladas.", 
+    "stock": 5,
+    "category": "Plantas de Interior" 
+    },
+
+    {"id": 3, 
+    "name": "Monstera deliciosa", 
+    "description": "Sus agujeros sirven para optimizar la poca luz solar que les suele llegar en sus hábitat naturales",
+    "price":6500, 
+    "stock": 6,
+    "category": "Plantas de Interior"
+    },
+
+    {"id": 4, 
+    "name": "El bambú", 
+    "description": "Una planta perfecta para terrazas y jardines es que protege la tierra de las malas hierbas", 
+    "price":7800,
+    "stock": 3,
+    "category": "Plantas de Exterior"
+    },
+
+    {"id": 5, 
+    "name": "El boj", 
+    "description": "En verano como en invierno sus hojas ofrecen una coloración intensa y muy llamativa; verde en primavera y anaranjada en otoño.",
+    "price":2850, 
+    "stock": 8,
+    "category": "Plantas de Exterior"
+    },
+
+    {"id": 6, 
+    "name": "La buganvilla", 
+    "description": "podemos cultivarla en maceta si la guiamos con un tutor o incluso utilizarla como una de las plantas de exterior para macetas colgantes.",
+    "price":4700, 
+    "stock": 7,
+    "category": "Plantas de Exterior" 
+    }
+    
+]
