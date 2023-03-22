@@ -27,7 +27,7 @@
 
 .seccionWelcome{
   width: 100%;
-  height: 800px;
+  height: 600px;
   background-image: url(../src/assets/img/monsterabg_1.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -60,6 +60,11 @@
   height: auto;
 }
 
+.logo2{
+  padding-top: 50px;
+  width: 180px;
+  height: auto;
+}
 .ttCategorias{
   font-size: 50px;
   font-family: 'Shadows Into Light', cursive;
@@ -67,15 +72,11 @@
   padding-top: 20px;
 }
 
-.contProductos {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
+
 
 .contCard{
-  width: 200px;
-  height: auto;
+  width: 350px;
+  height: 550px;
 }
 
 .ttCart {
@@ -93,4 +94,50 @@
 
 .ttContador{
   font-size: 30px;
+}
+
+.contProductos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+}
+
+.orderForm{
+  
+  display: flex;
+  align-items: center;
+
+}
+
+.ttEnvioOrdenes{
+  margin-top: 30px;
+  font-size: 30px;
+  font-family: 'Shadows Into Light', cursive;
+
+}
+
+.ttNroOrdenes{
+  font-size: 20px;
+  font-family: 'Shadows Into Light', cursive;
+  margin-top: 5px;
+  padding-left: 15px;
+}
+
+.ttTotalCompra{
+  padding-top: 10px;
+  font-size: 35px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.ttFooter{
+  text-align: center;
+  padding-top: 10px;
+  font-size: 20px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.contProductos2 {
+  display: flex;
+  flex-wrap: wrap;
 }

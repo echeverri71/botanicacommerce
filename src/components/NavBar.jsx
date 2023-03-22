@@ -20,24 +20,28 @@ const NavBar = () => {
             </Link>
             <Menu>
                 <Link to= {"/catalogue"}>
-                    <Button as={Button} >
+                    <Button colorScheme={'green'} as={Button} >
                         Todos los Productos
                     </Button>
                 </Link>
-                <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                <MenuButton colorScheme={'green'} as={Button} rightIcon={<ChevronDownIcon />}>
                     Categorias
                 </MenuButton>
                 <MenuList>
-                    <Link to={`/category/${"Plantas de Interior"}`}>
+                    <Link to={`/categoria/${"Plantas de Interior"}`}>
                         <MenuItem>Plantas de Interior</MenuItem>
                     </Link>
-                    <Link to={`/category/${"Plantas de Exterior"}`}>
+                    <Link to={`/categoria/${"Plantas de Exterior"}`}>
                         <MenuItem>Plantas de Exterior</MenuItem>
                     </Link>
+                    <Link to={`/categoria/${"Macetas"}`}>
                     <MenuItem>Macetas</MenuItem>
-                </MenuList>    
+                    </Link>
+                </MenuList> 
             </Menu>
-            <CartWidget/>
+            <Link to={"/cart"}>
+                <CartWidget />
+            </Link>
         </div>
     )
 }

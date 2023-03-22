@@ -1,38 +1,39 @@
 import React from 'react'
-import Data from "../data.json"
 import { useState, useEffect } from 'react';
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { Center, Wrap, WrapItem } from '@chakra-ui/react'
+import { Center } from '@chakra-ui/react';
+import {collection, getDocs, getFirestore} from "firebase/firestore";
 
 
 const ItemListContainer = () => {
-    const { category } = useParams();
+    const {categoria} = useParams();
     const [plantas, setPlantas] = useState ([]);
 
-    useEffect (() => {
-        async function fetchData () {
-            try {
-                const response = await fetch (Data);
-                const data = await response.json();
-                setPlantas(data);
-            } catch (error){}
-        }
-        fetchData();
-    }, []);
-    const catFilter = Data.filter ((planta)=> planta.category === category);
+    useEffect (()=> {
+        const db = getFirestore ();
+        const plantasCollection = collection (db, "Botanica");
+        getDocs (plantasCollection).then ((snapshot)=> {
+            const plantas = snapshot.docs.map ((doc)=> ({
+                ...doc.data(),
+                id: doc.id,
+            }));
+        setPlantas (plantas);
+        });
+    },[]);
+
+    const catFilter = plantas.filter ((planta)=> planta.categoria === categoria);
 
     return <div className='seccionProdcutos'>
         <div className='ttCategorias'>
-            <h2>Todos Los Prodcutos</h2>
+            <h2>Todos Los Productos</h2>
         </div>
-        <Wrap justify="center">
-            <WrapItem>
-            {category? <ItemList plantas={catFilter}/> : <ItemList plantas={Data}/>}
-            </WrapItem>
-        
-        </Wrap>
-        
+        <div>
+            <Center>
+            {categoria? <ItemList plantas={catFilter}/> : <ItemList plantas={plantas}/>}
+            </Center>
+            
+        </div>
     </div>
 };
 

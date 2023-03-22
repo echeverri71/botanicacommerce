@@ -1,5 +1,4 @@
 import React from 'react'
-import planta from "../assets/img/Planta.jpeg"
 import {
     Card,
     Center,
@@ -9,35 +8,32 @@ import {
     Text,
     Stack,
     CardFooter,
-    Button,
-    ButtonGroup
+    Button
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const Item = ({ id, name, stock, category,}) => {
+const Item = ({ id, nombre, stock, categoria, img}) => {
     return (
-        <div>
-            <div key={id}>
-                <Center p= "1rem">
-                <Card maxW='lg'align="center" className='contCard'>
+        <div className='cardItem'>
+            <div>
+                <Center p="2rem">
+                <Card maxW='xl'align="center" className='contCard'>
                     <CardBody align="center">
-                        <Image src={planta} borderRadius='lg'/>
-                        <Stack mt='6' spacing='3'>
-                        <Heading size='md'>{name}</Heading>
-                        <Text>Categoria: {category}</Text>
+                        <Image src={img} boxSize='300px'/>
+                        <Stack mt='2' spacing='1'>
+                        <Heading size='md'>{nombre}</Heading>
+                        <Text>Categoria:{categoria}</Text>
                         <Text color='green' fontSize='16px'>
-                            Stock: {stock}
+                            Stock:{stock}
                         </Text>
                         </Stack>
                     </CardBody>
                     <CardFooter>
-                        <ButtonGroup spacing='2'>
                         <Link to={`/item/${id}`}>
                             <Button variant='solid' colorScheme='green'>
                                 Detalles
                             </Button>
                         </Link>
-                        </ButtonGroup>
                     </CardFooter>
                 </Card>
                 </Center>

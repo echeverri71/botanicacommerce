@@ -1,17 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { useContext } from "react";
+import { CartContext } from "../context/ShoppingCartContext";
 
 const CartWidget = () => {
-    return (
-        <div>
-            <Link to={"/cart"}>
-                <span className="material-symbols-outlined">
-                shopping_cart
-                </span>
-            </Link>
-            <span>4</span>
-        </div>
-    )
-}
+    const [cart, setCart] = useContext(CartContext);
 
-export default CartWidget
+const quantity = cart.reduce((acc, curr) => {
+    return acc + curr.quantity;
+}, 0);
+
+return (
+    <>
+    <div className="cart">
+        <span className="material-symbols-outlined">shopping_cart</span>
+        <span>{quantity}</span>
+    </div>
+    </>
+);
+};
+
+export default CartWidget;
