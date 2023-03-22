@@ -4,6 +4,7 @@ import { collection, getFirestore, addDoc } from 'firebase/firestore'
 import { Input, Button, Center,} from '@chakra-ui/react'
 import { CartContext } from '../context/ShoppingCartContext'
 import { ArrowRightIcon } from '@chakra-ui/icons'
+import Swal from 'sweetalert2'
 
 const Order = () => {
     const [orderId, setOrderId] = useState(null);
@@ -14,7 +15,12 @@ const Order = () => {
     const db= getFirestore();
     const handleSumbit = (e) => {
         e.preventDefault();
-        addDoc (ordersCollection, order).then(({id})=> setOrderId(id))
+        if (name === "" || email ===""){
+            Swal.fire("Estos datos son necesarios para finalizar la compra");
+        } else {
+            addDoc (ordersCollection, order).then(({id})=> setOrderId(id))
+        }
+    setEmail ("");
     };
 
     const order = {
@@ -34,14 +40,13 @@ const Order = () => {
                     <form onSubmit={handleSumbit}>
                             <Input type="text" placeholder='Ingrese Nombre Completo' size='md' m={1} onChange={(e)=> setName(e.target.value)}/>
                             <Input type="text" placeholder='Ingrese su Email' size='md' m={1} onChange={(e)=> setEmail(e.target.value)}/>
-                            <Button type='submit' colorScheme="blue" m={2} size='md' leftIcon={<ArrowRightIcon/>}>
+                            <Button type='submit' colorScheme="blue" m={2} size='lg' leftIcon={<ArrowRightIcon/>}>
                                 Enviar Informacion y Finalizar Compra
                             </Button>
-                            <p className='ttNroOrdenes'>Nro. De Orden: {orderId}</p>
+                            <p className='ttNroOrdenes'>Nro. De Orden:{orderId}</p>
                     </form>
                 </div>
             </Center>
-            
         </div>
     )
 };

@@ -63,6 +63,7 @@ const ItemDetail = ({plantas}) => {
                                 nombre={planta.nombre}
                                 stock={planta.stock}
                                 precio={planta.precio}
+                                img={planta.img}
                                 />
                         </CardFooter>
                     </Card>

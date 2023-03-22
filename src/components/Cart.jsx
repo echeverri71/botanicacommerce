@@ -1,15 +1,8 @@
 import React from 'react'
 import {
-Button,
-Container,    
-Heading,
-Card,
-CardHeader,
-CardBody,
-CardFooter,
-Text,
 Image,
-Center
+Center,
+Button
 } from "@chakra-ui/react";
 import {useContext} from "react";
 import {CartContext} from "../context/ShoppingCartContext";
@@ -35,30 +28,21 @@ const Cart = () => {
             <div className='ttDetailCont'>
                 <h1>Productos en tu Carrito</h1>
             </div>
-            {cart.map((plantas) => {
+            {cart.map((item) => {
                 return (
-                    <Container key={plantas.id}>
-                        
-                    
-                        <Card align='center' boxSize='300px'>
-                            <CardHeader>
-                            <Image src={plantas.img} boxSize='50px'/>
-                            <Heading size="md">{plantas.nombre}</Heading>
-                            </CardHeader>
-                            <CardBody>
-                                <Text as="b">Cantidad: {plantas.quantity}</Text>
-                                <Text>Precio: ${plantas.precio}</Text>
-                            </CardBody>
-                            <CardFooter>
-                                <Button colorScheme="orange" onClick={()=>removeItem(item.id)}>
-                                Borrar del Carrito
-                                </Button>
-                            </CardFooter>
-                        </Card>
-                        
-                        
-                        
-                    </Container>
+                    <div key={item.id} className='contCart'>
+                        <div>
+                            <Image src={item.img} boxSize='80px' borderRadius='full'/>
+                        </div>
+                        <div className='contBBorrar'>
+                            <p className='ttNombreCart'>{item.nombre}</p>
+                            <p className='ttPrecioCart'>Precio: ${item.precio}</p>
+                            <p className='ttCantCart'>Cantidad: {item.quantity}</p>
+                        </div>
+                        <div className='contBBorrar'>
+                            <Button onClick={()=>removeItem(item.id)} colorScheme='red'>Borrar del Carrito</Button>
+                        </div>
+                    </div>
                 );
             })}
         <Center>

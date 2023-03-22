@@ -104,7 +104,6 @@
 }
 
 .orderForm{
-  
   display: flex;
   align-items: center;
 
@@ -141,3 +140,32 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.contCart{
+  width: auto;
+  height: auto;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.ttNombreCart{
+  font-size: 25px;
+  font-family: 'Shadows Into Light', cursive;
+}
+.ttPrecioCart{
+  font-size: 20px;
+  font-family: 'Shadows Into Light', cursive;
+}
+.ttCantCart{
+  font-size: 20px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.contBBorrar{
+  padding-left: 30px;
+}
+
